@@ -16,11 +16,6 @@ jobs:
         with:
           channel: "stable"
 
-      - name: Install FlutterWebTools
-        run: |
-          curl -L -o flutterwebtools https://github.com/fischerscode/FlutterWebTools/releases/download/v1.0/flutterwebtools-linux
-          chmod +x flutterwebtools
-
       - name: Test ✅
         run: |
           flutter pub get
@@ -32,7 +27,6 @@ jobs:
       - name: Build 🔧
         run: |
           flutter build web --release
-          ./flutterwebtools -B
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4.2.5
