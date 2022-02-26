@@ -1,0 +1,9 @@
+{
+  "appTitle": "Mathe Tools",
+  "calculate": "Berechnen",
+  "euclidean": "Euklidischer Algorithmus",
+  "required": "Pflichtfeld",
+  "zeronotallowed": "0 ist nicht erlaubt",
+  "congruenceSystem": "Kongruenzsystem",
+  "iterations": "Iterationen"
+}

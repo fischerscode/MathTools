@@ -1,0 +1,12 @@
+{
+  "appTitle": "Math Tools",
+  "@appTitle": {
+    "description": "The title of the application"
+  },
+  "calculate": "calculate",
+  "euclidean": "euclidean algorithm",
+  "required": "required",
+  "zeronotallowed": "0 not allowed",
+  "congruenceSystem": "congruence system",
+  "iterations": "iterations"
+}
