@@ -18,8 +18,8 @@ jobs:
 
       - name: Install FlutterWebTools
         run: |
-          curl https://github.com/fischerscode/FlutterWebTools/releases/download/v1.0/flutterwebtools-linux
-          chmod +x flutterwebtools-linux
+          curl -L -o flutterwebtools https://github.com/fischerscode/FlutterWebTools/releases/download/v1.0/flutterwebtools-linux
+          chmod +x flutterwebtools
 
       - name: Test ✅
         run: |
@@ -32,7 +32,7 @@ jobs:
       - name: Build 🔧
         run: |
           flutter build web --release
-          ./flutterwebtools-linux -B
+          ./flutterwebtools -B
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4.2.5
