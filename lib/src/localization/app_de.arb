@@ -7,5 +7,8 @@
   "congruenceSystem": "Kongruenzsystem",
   "iterations": "Iterationen",
   "about": "Informationen",
-  "settings": "Einstellungen"
+  "settings": "Einstellungen",
+  "division": "Division",
+  "dividend": "Dividend",
+  "divisor": "Divisor"
 }

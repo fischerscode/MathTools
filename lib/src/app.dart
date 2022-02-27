@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:math_tools/src/congruence/congruence_page.dart';
+import 'package:math_tools/src/division/division_page.dart';
 import 'package:math_tools/src/euclidean/euclidean_page.dart';
 import 'package:math_tools/src/menu/menu_list_view.dart';
 
@@ -51,6 +52,8 @@ class MyApp extends StatelessWidget {
                     return const EuclideanPage();
                   case CongruenceSystemPage.routeName:
                     return const CongruenceSystemPage();
+                  case DivisionPage.routeName:
+                    return const DivisionPage();
                   case MenuListView.routeName:
                   default:
                     return const MenuListView();

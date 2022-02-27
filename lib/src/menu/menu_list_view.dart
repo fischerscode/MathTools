@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:math_tools/src/congruence/congruence_page.dart';
+import 'package:math_tools/src/division/division_page.dart';
 import 'package:math_tools/src/euclidean/euclidean_page.dart';
 import 'package:math_tools/src/github.dart';
 import 'package:math_tools/src/menu/page.dart' as menu;
@@ -23,6 +24,10 @@ class MenuListView extends StatelessWidget {
     menu.Page(
       CongruenceSystemPage.routeName,
       CongruenceSystemPage.pageName,
+    ),
+    menu.Page(
+      DivisionPage.routeName,
+      DivisionPage.pageName,
     ),
   ];
 

@@ -13,5 +13,8 @@
   "@about": {
     "description": "The text of the about dialog button."
   },
-  "settings": "Settings"
+  "settings": "Settings",
+  "division": "division",
+  "dividend": "dividend",
+  "divisor": "divisor"
 }
