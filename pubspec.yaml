@@ -15,6 +15,7 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   freezed_annotation: ^1.1.0
+  url_launcher: ^6.0.20
 
 dev_dependencies:
   flutter_test:

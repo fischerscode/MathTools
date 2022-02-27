@@ -5,5 +5,7 @@
   "required": "Pflichtfeld",
   "zeronotallowed": "0 ist nicht erlaubt",
   "congruenceSystem": "Kongruenzsystem",
-  "iterations": "Iterationen"
+  "iterations": "Iterationen",
+  "about": "Informationen",
+  "settings": "Einstellungen"
 }

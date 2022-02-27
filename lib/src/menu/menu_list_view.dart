@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:math_tools/src/congruence/congruence_page.dart';
 import 'package:math_tools/src/euclidean/euclidean_page.dart';
+import 'package:math_tools/src/github.dart';
 import 'package:math_tools/src/menu/page.dart' as menu;
 
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -32,6 +33,10 @@ class MenuListView extends StatelessWidget {
       appBar: AppBar(
         title: Text(localization.appTitle),
         actions: [
+          IconButton(
+            icon: Image.asset("assets/images/GitHub-Mark.png"),
+            onPressed: GitHub.open,
+          ),
           IconButton(
             icon: const Icon(Icons.settings),
             onPressed: () {

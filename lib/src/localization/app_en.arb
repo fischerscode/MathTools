@@ -8,5 +8,10 @@
   "required": "required",
   "zeronotallowed": "0 not allowed",
   "congruenceSystem": "congruence system",
-  "iterations": "iterations"
+  "iterations": "iterations",
+  "about": "about",
+  "@about": {
+    "description": "The text of the about dialog button."
+  },
+  "settings": "Settings"
 }

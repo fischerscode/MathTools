@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:math_tools/src/github.dart';
+import 'package:math_tools/src/localization/localizations.dart';
 
 import 'settings_controller.dart';
 
@@ -15,34 +17,59 @@ class SettingsView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final localizations = AppLocalizations.of(context)!;
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Settings'),
+        title: Text(localizations.settings),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(16),
-        // Glue the SettingsController to the theme selection DropdownButton.
-        //
-        // When a user selects a theme from the dropdown list, the
-        // SettingsController is updated, which rebuilds the MaterialApp.
-        child: DropdownButton<ThemeMode>(
-          // Read the selected themeMode from the controller
-          value: controller.themeMode,
-          // Call the updateThemeMode method any time the user selects a theme.
-          onChanged: controller.updateThemeMode,
-          items: const [
-            DropdownMenuItem(
-              value: ThemeMode.system,
-              child: Text('System Theme'),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(16),
+              // Glue the SettingsController to the theme selection DropdownButton.
+              //
+              // When a user selects a theme from the dropdown list, the
+              // SettingsController is updated, which rebuilds the MaterialApp.
+              child: DropdownButton<ThemeMode>(
+                // Read the selected themeMode from the controller
+                value: controller.themeMode,
+                // Call the updateThemeMode method any time the user selects a theme.
+                onChanged: controller.updateThemeMode,
+                items: const [
+                  DropdownMenuItem(
+                    value: ThemeMode.system,
+                    child: Text('System Theme'),
+                  ),
+                  DropdownMenuItem(
+                    value: ThemeMode.light,
+                    child: Text('Light Theme'),
+                  ),
+                  DropdownMenuItem(
+                    value: ThemeMode.dark,
+                    child: Text('Dark Theme'),
+                  )
+                ],
+              ),
             ),
-            DropdownMenuItem(
-              value: ThemeMode.light,
-              child: Text('Light Theme'),
+            ElevatedButton(
+              onPressed: () {
+                showAboutDialog(
+                  context: context,
+                  children: [
+                    OutlinedButton(
+                      onPressed: GitHub.open,
+                      child: Image.asset(
+                        "assets/images/Github_Logo.png",
+                        fit: BoxFit.scaleDown,
+                        height: 50,
+                      ),
+                    ),
+                  ],
+                );
+              },
+              child: Text(localizations.about),
             ),
-            DropdownMenuItem(
-              value: ThemeMode.dark,
-              child: Text('Dark Theme'),
-            )
           ],
         ),
       ),
