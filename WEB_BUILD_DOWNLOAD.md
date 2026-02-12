@@ -6,6 +6,8 @@ This document explains how to download and use the web build of MathTools.
 
 The web build is automatically generated using GitHub Actions whenever code is pushed to the repository. The build artifacts are available for download from the GitHub Actions page.
 
+**Note**: For pull requests, the workflow may require approval from a repository maintainer before it runs. This is a security feature to protect the repository.
+
 ## How to Download
 
 1. Go to the [GitHub Actions page](https://github.com/fischerscode/MathTools/actions)
