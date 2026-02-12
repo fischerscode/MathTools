@@ -1,0 +1,55 @@
+name: Web Build Artifact
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - master
+      - main
+      - 'copilot/**'
+
+jobs:
+  build-web:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: 'stable'
+          cache: true
+
+      - name: Get dependencies
+        run: flutter pub get
+
+      - name: Generate localizations
+        run: flutter gen-l10n
+
+      - name: Build runner
+        run: flutter pub run build_runner build --delete-conflicting-outputs
+
+      - name: Build web
+        run: flutter build web --release --base-href /
+
+      - name: Create web build archive
+        run: |
+          cd build/web
+          zip -r ../../math-tools-web-build.zip .
+          cd ../..
+
+      - name: Upload web build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: math-tools-web-build
+          path: math-tools-web-build.zip
+          retention-days: 90
+
+      - name: Upload web build directory
+        uses: actions/upload-artifact@v4
+        with:
+          name: math-tools-web-files
+          path: build/web/
+          retention-days: 90
